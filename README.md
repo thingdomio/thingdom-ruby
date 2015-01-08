@@ -22,7 +22,19 @@ gem install thingdom
 
 ## Getting Started
 ```
-Sample Ruby code coming soon.
+require 'thingdom'
+
+# instantiate Thingdom object and authenticate
+thingdom = Thingdom.new( 'YOUR_API_SECRET' )
+
+# look-up Thing and get back object
+thing = thingdom.get_thing( 'YOUR_THING_NAME' )
+
+# send a feed message
+thing.feed( 'FEED_CATEGORY', 'MESSAGE' )
+
+# send a status update
+thing.status( 'KEY', 'VALUE' )
 
 ```
 

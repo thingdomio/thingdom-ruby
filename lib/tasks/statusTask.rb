@@ -3,7 +3,7 @@ require_relative( 'baseTask' )
 class StatusTask < BaseTask
 
   def initialize( webService, thing, *args )
-    super( webService, thing )
+    super( webService, thing, false )
     @web = webService
     @thing = thing
     @statusUpdates = statusArgsToArray( *args )

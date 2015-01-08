@@ -67,9 +67,15 @@ class HttpHelper
   #
   def do_request( requestPath, data = nil )
     #
-    # Build request and parse JSON response into a hash
+    # Initialize HTTPS.
     #
-    http = Net::HTTP.new( @uri.host, @uri.port )
+    https = Net::HTTP.new( @uri.host, @uri.port )
+    https.use_ssl = true
+    https.verify_mode =  OpenSSL::SSL::VERIFY_PEER
+    https.ca_file = File.join( File.dirname( __FILE__ ), 'cacert.pem' )
+    #
+    # Build request.
+    #
     if( data.nil? )
       request = Net::HTTP::Get.new( @path + '/' + requestPath )
     else
@@ -80,7 +86,7 @@ class HttpHelper
     #
     # Send request and convert JSON response into a hash.
     #
-    response = http.request( request )
+    response = https.request( request )
     jsonHash = json_to_hash( response.body )
   end
 

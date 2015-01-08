@@ -3,7 +3,7 @@ require_relative( 'baseTask' )
 class FeedTask < BaseTask
 
   def initialize( webService, thing, category, message, feedOptions )
-    super( webService, thing )
+    super( webService, thing, false )
     @web = webService
     @thing = thing
     @category = category

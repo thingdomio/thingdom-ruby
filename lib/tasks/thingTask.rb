@@ -3,7 +3,7 @@ require_relative ( 'baseTask' )
 class ThingTask < BaseTask
 
   def initialize( webService, thing )
-    super( webService, thing )
+    super( webService, thing, true )
     @web = webService
     @thing = @thing
   end
