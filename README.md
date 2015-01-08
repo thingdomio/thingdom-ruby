@@ -22,29 +22,7 @@ gem install thingdom
 
 ## Getting Started
 ```
-var Thingdom = require( 'thingdom' ).Thingdom;
-
-// instantiate Thingdom object and authenticate
-var thingdom = new Thingdom( 'YOUR_API_SECRET', function( result ) {
-    if( result.isSuccess ) {
-
-        // look-up Thing and get back object
-        thingdom.getThing( 'YOUR_THING_NAME', function( thing, result ) {
-            if( result.isSuccess ) {
-
-                // send a feed message
-                thing.feed( 'FEED_CATEGORY', 'MESSAGE', function( result ) {
-                    // do something based on result.isSuccess
-                });
-
-                // send a status update
-                thing.status( 'KEY', 'VALUE', function( result ) {
-                    // do something based on result.isSuccess
-                });
-            }
-        });
-    }
-});
+Sample Ruby code coming soon.
 
 ```
 
