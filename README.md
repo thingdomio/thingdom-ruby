@@ -1,7 +1,7 @@
 Thingdom Ruby Module
 ===========
 
-Ruby module for v1.1 of the [Thingdom.io API](https://thingdom.io/).
+The official Ruby wrapper for the [Thingdom API](https://thingdom.io/).
 
 ## What is Thingdom?
 

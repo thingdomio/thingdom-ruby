@@ -1,6 +1,17 @@
-
+#
+# A psuedo abstract class that provides common functionality for performing Thing tasks.
+# These are: retrieving a thing, updating status and sending a feed.
+#
 class BaseTask
 
+  #
+  # Constructor method for base task.  Initialize web service and the thing for which
+  # tasks will be performed.
+  #
+  # @param [WebService] webService A web service to be used by the task.
+  # @param [Thing] thing The thing for which the task is being performed.
+  # @param [boolean] isThingTask True if the task is retrieving or creating a thing.
+  #
   def initialize( webService, thing, isThingTask )
     @web = webService
     @thing = thing

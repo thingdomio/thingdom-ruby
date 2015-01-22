@@ -32,7 +32,8 @@ class WebService
   # @return [Hash] A hash containing the authorization response:
   #                  application_token - The token used in subsequent communications with Thingdom
   #                  expires_in - The number of seconds remaining before above token expires.
-  #                  device_secret - A unique identifier for device running this application (always ruby in this case)
+  #                  device_secret - A unique identifier for device running this application
+  #                                 (always "none" for the Ruby wrapper)
   #
   def get_authorization()
     data = {

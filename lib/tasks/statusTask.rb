@@ -1,7 +1,13 @@
+#
+# A class that does the work for updating the status for a thing.
+#
 require_relative( 'baseTask' )
 
 class StatusTask < BaseTask
 
+  #
+  # Constructor method for status task.  Initialize status update array.
+  #
   def initialize( webService, thing, *args )
     super( webService, thing, false )
     @web = webService
@@ -9,6 +15,9 @@ class StatusTask < BaseTask
     @statusUpdates = statusArgsToArray( *args )
   end
 
+  #
+  # Do the work for the status task.
+  #
   def do_task_work
     @web.add_status( @thing, @statusUpdates )
   end
